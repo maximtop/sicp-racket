@@ -1,6 +1,6 @@
 #lang info
 
-(define name "sicp-racket-boilerplate")
+(define name "sicp-racket")
 
 #| (define blurb |#
 #|   (list '(p "Write RESTful web apps in Racket."))) |#
@@ -11,7 +11,7 @@
 
 #| (define primary-file "main.rkt") |#
 #| (define categories '(net)) |#
-(define homepage "https://github.com/Hexlet/sicp-racket-boilerplate")
+(define homepage "https://github.com/maximtop/sicp-racket")
 #| (define version "1.3") |#
 #| (define required-core-version "5.2") |#
 #| (define repositories |#
