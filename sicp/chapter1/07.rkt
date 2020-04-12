@@ -20,12 +20,12 @@
       (sqrt-iter (improve guess x) x)))
 
 (define (good-enough2? guess next-guess)
-  (< (/ (abs (- next-guess guess)) guess) 0.001))
+  (< (/ (abs (- next-guess guess)) guess) 0.00001))
 
 (define (sqrt-iter2 guess x)
   (let ([next-guess (improve guess x)])
     (if (good-enough2? guess next-guess)
-        guess
+        next-guess
         (sqrt-iter2 next-guess x))))
 
 (define (sqrt x)
@@ -34,8 +34,7 @@
 (define (sqrt2 x)
   (sqrt-iter2 1.0 x))
 
-(sqrt 9)
-(sqrt2 9)
-
-(sqrt 0.000004) ; returns wrong 0.03129261341049664
-(sqrt2 0.000004) ; returns close enough 002001107733030763
+(define epsilon 0.00001)
+(check-= (sqrt2 0.04) 0.2 epsilon)
+(check-= (sqrt2 0.0004) 0.02 epsilon)
+(check-= (sqrt2 40000) 200 epsilon)
